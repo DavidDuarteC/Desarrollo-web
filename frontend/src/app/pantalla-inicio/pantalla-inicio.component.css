@@ -1,0 +1,179 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+#titulo-inicio{
+    text-align: center;
+}
+#video{
+    margin-top: 40px;
+    align-items: center;
+}
+#titulo-testimonios{
+    margin-top: -30px;
+    text-align: center;
+}
+
+.carrusel{
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    align-items: center;
+}
+.carrusel iframe{
+    top: 0;
+    left: 0;
+    width: 90%;
+    height: 90%;
+    object-fit: cover;
+    display: block;
+    margin: 0  auto;
+}
+.carrusel .navegacion-videos{
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 100;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.carrusel .navegacion-videos li{
+    list-style: none;
+    cursor: pointer;
+    margin: 100px 10px;
+    border-radius: 4px;
+    background: #fff;
+    padding: 3px 3px 3px;
+    opacity: 0.7;
+    transition: 0.5s;
+}
+.carrusel .navegacion-videos li:hover{
+    opacity: 1;
+}
+.carrusel .navegacion-videos li img{
+    width: 150px;
+    transition: 0.5s;
+}
+.carrusel .navegacion-videos li img:hover{
+    width: 200px;
+}
+.imagen-texto{
+    width: 100%;
+    height: 300px;
+    display: block;
+    text-align: center;
+    padding: 40% 5%;
+    background: #333;
+    color: #fff;
+    border-radius: 15px;
+}
+.imagen-texto h2{
+    font-size: 25px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+.imagen-texto p{
+    font-size: 14px;
+}
+/*Testtimonios*/
+  .container{
+
+    overflow: hidden;
+  }
+  .container .main-card{
+    display: flex;
+    justify-content: space-evenly;
+    width: 200%;
+    transition: 1s;
+    margin-top: 20px;
+  }
+  #two:checked ~ .main-card{
+    margin-left: -100%;
+  }
+  .container .main-card .cards{
+    width: calc(100% / 2 - 20px);
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 20px;
+    justify-content: space-between;
+  }
+  .main-card .cards .card{
+    width: calc(100% / 2 - 10px);
+    background: #fff;
+    border-radius: 12px;
+    padding: 30px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.25);
+    transition: all 0.4s ease;
+  }
+  .main-card .cards .card:hover{
+    transform: translateY(-15px);
+  }
+  .cards .card .content{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+
+  .card .content i{
+    font-size: 40px;
+    color: #0A58CA;
+    margin-bottom: 10px;
+  }
+  .card .content .name{
+    font-size: 20px;
+    font-weight: 500;
+  }
+   .container .button{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin: 20px;
+  }
+  .button label{
+    height: 15px;
+    width: 15px;
+    border-radius: 20px;
+    background: #333;
+    margin: 0 4px;
+    cursor: pointer;
+    transition: all 0.5s ease;
+  }
+  .button label.active{
+    width: 35px;
+  }
+  #one:checked ~ .button .one{
+    width: 35px;
+  }
+  #one:checked ~ .button .two{
+    width: 15px;
+  }
+  #two:checked ~ .button .one{
+    width: 15px;
+  }
+  #two:checked ~ .button .two{
+    width: 35px;
+  }
+  input[type="radio"]{
+    display: none;
+  }
+  @media (max-width: 768px) {
+    .main-card .cards .card{
+      margin: 20px 0 10px 0;
+      width: calc(100% / 2 - 10px);
+    }
+  }
+  @media (max-width: 600px) {
+    .main-card .cards .card{
+      margin: 20px 0 10px 0;
+      width: 100%;
+    }
+  }
+  

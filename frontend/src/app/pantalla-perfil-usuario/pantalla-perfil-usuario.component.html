@@ -1,0 +1,33 @@
+<body>
+    <div class="container">
+        <div class="contenido">
+            <div class="lado-izq">
+                <div class="details">
+                    <a (click)="iraHistorial()">
+                        <i class="fas fa-history"></i>
+                        <div *ngIf="persona.rol == 'user'"class="topic">Historial Compras</div>
+                        <div *ngIf="persona.rol == 'admin'" class="topic">Reporte Ventas</div>
+                    </a>
+                </div>
+                <div class="details">
+                    <a>
+                        <i (click)="logout()" class="fas fa-sign-out-alt"></i>
+                        <div (click)="logout()" class="topic" >Cerrar Sesión </div>
+                    </a>
+                </div>
+            </div>
+            <div class="lado-der">
+                <div *ngIf="persona.rol == 'admin'" class="topic-text">Administrador</div>
+                <div *ngIf="persona.rol == 'user'" class="topic-text">Usuario</div>
+                <form>
+                    <div class="input-box">
+                        <span>{{persona.nombre}}</span>
+                        <br>
+                        <span>{{persona.email}}</span>
+                    </div>
+                    <img src="assets/img/usuario.png" >
+                </form>
+            </div>
+        </div>
+    </div>
+</body>

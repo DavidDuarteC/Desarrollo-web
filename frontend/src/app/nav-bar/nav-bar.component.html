@@ -1,0 +1,122 @@
+<div class="nav-container">
+  <nav>
+      <ul class="mobile-nav">
+          <li>
+              <div class="menu-icon-container">
+                  <div class="menu-icon">
+                      <span class="line-1"></span>
+                      <span class="line-2"></span>
+                  </div>
+              </div>
+          </li>
+
+          <li>
+            <a href="" class="linkLogo"><p id="logoCelular">MiProductoYa.com</p></a> 
+          </li>
+
+          <li>
+              <a *ngIf="loggedin == true && sesion.rol != 'admin'" [routerLink]="['carrito']" class="link-bag"></a>
+          </li>
+      </ul>
+
+      <ul class="desktop-nav">
+          <li>
+            <a href="" class="linkLogo"><h5 id="logo">MiProductoYa.com</h5></a> 
+          </li>
+          <li>
+              <a [routerLink]="['inicio']" >Inicio</a>
+          </li>
+          <li>
+              <a *ngIf="sesion.rol != 'admin'" [routerLink]="['tienda']" >Tienda</a>
+              <a *ngIf="sesion.rol == 'admin'" [routerLink]="['crud']" >CRUD</a>
+          </li>
+          <li>
+              <a [routerLink]="['contacto']">Contacto</a>
+          </li>
+          <li>
+              <a [routerLink]="['preguntas-frecuentes']">Preguntas Frecuentes</a>
+          </li>
+          <li>
+              <a  *ngIf="loggedin == true"  [routerLink]="['usuario']" class="link-user"></a>
+              <a  *ngIf="loggedin == false"  [routerLink]="['login']" class="link-user"></a>
+          </li>
+          <li>
+              <a class="link-search"></a>
+          </li>
+          <li>
+              <a *ngIf="loggedin == true && sesion.rol != 'admin'" [routerLink]="['carrito']" class="link-bag"></a>
+          </li>
+      </ul>
+  </nav>
+
+  <!-- End of navigation menu items -->
+
+  <div class="search-container hide">
+      <div class="link-search"></div>
+      <div class="search-bar">
+          <form action="">
+              <input type="text" placeholder="Buscar MiProductoYa.com">
+          </form>
+      </div>
+      <div class="link-close"></div>
+
+      <div class="quick-links">
+          <h2>Búsqueda rapida</h2>
+          <ul>
+              <li>
+                  <a href="#">Visiting an Apple Store FAQ</a>
+              </li>
+              <li>
+                  <a href="#">Shop Apple Store Online</a>
+              </li>
+              <li>
+                  <a href="#">Accessories</a>
+              </li>
+              <li>
+                  <a href="#">AirPods</a>
+              </li>
+              <li>
+                  <a href="#">AirTag</a>
+              </li>
+          </ul>
+      </div>
+  </div>
+
+
+  <div class="mobile-search-container">
+      <div class="link-search"></div>
+      <div class="search-bar">
+          <form action="">
+              <input type="text" placeholder="Buscar MiProductoYa.com">
+          </form>
+      </div>
+      <span class="cancel-btn">Cancelar</span>
+
+      <div class="quick-links">
+          <h2>Búsqueda rapida</h2>
+          <ul>
+              <li>
+                  <a href="#">Visiting an Apple Store FAQ</a>
+              </li>
+              <li>
+                  <a href="#">Shop Apple Store Online</a>
+              </li>
+              <li>
+                  <a href="#">Accessories</a>
+              </li>
+              <li>
+                  <a href="#">AirPods</a>
+              </li>
+              <li>
+                  <a href="#">AirTag</a>
+              </li>
+          </ul>
+      </div>
+  </div>
+  
+
+</div>
+
+
+<div class="overlay"></div>
+

@@ -1,0 +1,60 @@
+<div class="container">
+	<h1>Admin CRUD</h1>
+    <br>
+    <h4>Crear productos</h4>
+    <div class="contenedor-crud">
+        <form (ngSubmit)="formSubmitAgregarProducto()" class="row g-3">
+            <div class="col-md-9">
+                <label class="form-label" for="crearNombre">Nombre del producto</label>
+                <input type="text" class="form-control" id="crearNombre" name="nombre" [(ngModel)]="producto.nombre" required>
+            </div>
+            <div class="col-md-3">
+              <label for="crearCantidad" class="form-label">Cantidad del producto</label>
+              <input type="number" class="form-control" id="crearCantidad" value="Otto" name="cantidad" [(ngModel)]="producto.cantidad" required>
+            </div>
+            <div class="input-group col-md-3">
+                <span class="input-group-text">$</span>
+                <input id="crearPrecio" type="number" placeholder="Precio del producto" class="form-control number" name="precio" [(ngModel)]="producto.precio" required>
+                <span class="input-group-text">%</span>
+                <input type="number" class="form-control number" id="crearDescuento" placeholder="Descuento del producto" name="descuento" [(ngModel)]="producto.descuento" required>
+            </div>
+            <div class="md-3">
+                <label for="crearImagen" class="form-label">Imagen del producto</label>
+                <input class="form-control bannerImg" type="file" id="crearImagen" (change)="onChange($event)" required>
+                <!-- <img  [src]="previsualizacion" alt=""> -->
+            </div>
+            <div class="mb-3">
+                <label for="crearDescripcion" class="form-label">Descripción corta del producto</label>
+                <textarea class="form-control" id="crearDescripcion" rows="3"  name="descripcion" [(ngModel)]="producto.descripcion" required></textarea>
+            </div>
+            <div class="col-12">
+                <button type="submit" class="btn btn-outline-success">Crear</button>
+            </div>
+          </form>
+    </div>
+    <hr>
+    <br>
+    <h4>Lista Productos</h4>
+    <!--Productos-->
+	<div class="lista" *ngFor="let productoA of productos">
+        <a>
+            <div class="container">
+                <div class="productos">
+                    <div class="producto">
+                        <img (click)="iraEditarProducto(productoA)" class="imagen-producto" [src]="productoA.imagen">
+                        <div class="producto-info">
+                            <h4 class="producto-nombre">{{productoA.nombre}}</h4>
+                            <h5 class="producto-precio">{{(productoA.precio * productoA.descuento) | currency}}</h5>
+                            <h6 class="producto-oferta"><del>{{productoA.precio | currency}}</del></h6>
+                            <p class="producto-cantidad">Cant. <input type="number" value="{{productoA.cantidad}}" disabled min="1" max="{{productoA.cantidad}}"/>
+                            <p class="producto-eliminar">
+                                <button (click)="clickEliminarProducto(productoA)" type="button" class="btn btn-outline-danger producto-eliminar"><i class="fas fa-trash-alt" aria-hidden="true"></i></button>
+                            </p>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </a>
+	</div>
+</div>

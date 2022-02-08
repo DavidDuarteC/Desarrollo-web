@@ -1,0 +1,57 @@
+<div class="login">
+    <div class="login__content">
+        <div class="login__img">
+            <img src="assets/img/login.svg" alt="">
+        </div>
+
+        <div class="login__forms">
+            <form class="login__registre" id="login-in"  (ngSubmit)="formSubmitLogin()">
+                <h1 class="login__title">Inicio de sesión</h1>
+
+                <div class="login__box">
+                    <i class='bx bx-at login__icon'></i>
+                    <input type="email" placeholder="Correo Electrónico" class="login__input form-control" required name="email" [(ngModel)]="persona.email">
+                </div>
+
+                <div class="login__box">
+                    <i class='bx bx-lock-alt login__icon'></i>
+                    <input type="password" placeholder="Contraseña" class="login__input form-control" required name="contrasena"  [(ngModel)]="persona.contrasena">
+                </div>
+                <div class="d-grid gap-2">
+                    <button class="btn btn-outline-primary login__button" type="submit">Iniciar Sesión</button>
+                </div>
+                
+                <div>
+                    <span class="login__account">¿No tienes una cuenta?</span>
+                    <span class="login__signin" id="sign-up"> Registrarse</span>
+                </div>
+            </form>
+
+            <form class="login__create none" id="login-up" (ngSubmit)="formSubmitRegistro()">
+                <h1 class="login__title">Crear una cuenta</h1>
+
+                <div class="login__box">
+                    <i class='bx bx-user login__icon'></i>
+                    <input type="text" placeholder="Nombre" class="login__input form-control" required name="nombre" id="nombre" [(ngModel)]="persona.nombre">
+                </div>
+
+                <div class="login__box">
+                    <i class='bx bx-at login__icon'></i>
+                    <input type="email" placeholder="Correo Electrónico" class="login__input form-control" required name="email" id="email" [(ngModel)]="persona.email">
+                </div>
+
+                <div class="login__box">
+                    <i class='bx bx-lock-alt login__icon'></i>
+                    <input type="password" placeholder="Contraseña" class="login__input form-control" required name="contrasena" id="contrasena" [(ngModel)]="persona.contrasena">
+                </div>
+                <div class="d-grid gap-2">
+                    <button class="btn btn-outline-primary login__button" type="submit">Registrarse</button>
+                </div>
+                <div>
+                    <span class="login__account">¿Ya tienes una cuenta?</span>
+                    <span class="login__signup" id="sign-in"> Iniciar Sesión</span>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

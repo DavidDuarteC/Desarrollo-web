@@ -1,0 +1,33 @@
+<main class="l-main bd-grid">
+    <div class="home">
+        <div class="producto">
+            <div class="container-img">
+                <img [src]="producto.imagen" alt="" class="img-producto shows" >
+            </div>
+        </div>
+        <div class="informacion-producto">
+            <form (ngSubmit)="formSubmitEditarProducto()">
+                <div class="info">
+                    <input type="text" class="form-control info-titulo" id="validationDefault01" value="{{producto.nombre}}" name="nombre" [(ngModel)]="producto.nombre" required>
+                    <textarea class="form-control info-descripcion" id="validationTextarea"  placeholder="Required example textarea" name="descripcion" [(ngModel)]="producto.descripcion" required>{{producto.descripcion}}</textarea>
+                    <div class="precio-boton input-group descuento">
+                        <span class="input-group-text">%</span>
+                    <input type="number" class="form-control number" id="crearDescuento" value="{{producto.descuento}}" name="descuento" [(ngModel)]="producto.descuento" required>
+                    </div>
+                </div>
+                <div class="cant-container"> 
+                    <h3 class="cant-titulo">Cant.</h3>
+                    <input type="number" value="{{producto.cantidad}}" min="0" max="1000" name="cantidad" [(ngModel)]="producto.cantidad"/>
+                </div>
+                <div class="precio precio-boton">
+                   <div class="precio-boton input-group">
+                    <span class="input-group-text">$</span>
+                    <input id="crearPrecio" type="number" value="{{producto.precio}}" class="form-control precio-mod number" name="precio" [(ngModel)]="producto.precio" required>
+                   </div>
+                    <!-- <a href="#" class="precio-boton">ADD TO CART</a> -->
+                    <button type="submit" class="btn btn-outline-success precio-boton">Modificar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</main>

@@ -1,0 +1,254 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+h1, h2, h3, p {
+  margin: 0;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+/*=====  LAYOUT =====*/
+.bd-grid {
+  max-width: 1200px;
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
+
+.l-header {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: var(--z-fixed);
+}
+
+/*===== Home =====*/
+.home {
+  height: calc(100vh - 3rem);
+  display: grid;
+  overflow: hidden;
+  margin-top: -158px;
+  margin-bottom: 125px;
+  align-items: center;
+}
+
+/*===== Sneaker =====*/
+.producto {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 2rem 0;
+  position: relative;
+  
+}
+
+.container-img {
+  width: 240px;
+  height: 240px;
+  border-radius: 50%;
+  -webkit-transition: .5s;
+  transition: .5s;
+}
+
+.img-producto {
+    border-radius: 5%;
+    margin-top: 50px;
+  width: 313px;
+  position: absolute;
+  top: 16%;
+  left: 9%;
+  right: 0;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.25);
+  transition: all 0.4s ease;
+  margin-left: auto;
+  margin-right: auto;
+  opacity: 0;
+  -webkit-filter: drop-shadow(0px 10px 10px rgba(17, 17, 17, 0.4));
+          filter: drop-shadow(0px 10px 10px rgba(17, 17, 17, 0.4));
+  
+}
+
+.img-producto.shows {
+  opacity: 1;
+}
+.img-producto:hover{
+  transform: scale(1.01);
+}
+/*===== Data =====*/
+.info {
+  margin-bottom: 1rem;
+}
+.info-titulo {
+  font-size: 2rem;
+  margin-bottom: .5rem;
+  width: 600px;
+}
+
+.info-descripcion{
+  font-size: 1rem;
+  width: 400px;
+  height: auto;
+  resize: none;
+}
+
+
+
+/*===== Cant =====*/
+.cant-titulo {
+  font-size: 1rem;
+  margin-right: 10px;
+  color: #0A58CA;
+}
+
+.cant-container {
+  width: 100px;
+  height: 30px;
+  display: border-box;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: var(--primary);
+  color: var(--white-color);
+  padding: .5rem;
+  border-radius: .25rem;
+}
+.cant-container input{
+    border-radius: 4%;
+    background-color: #fff;
+    color: #0A58CA;
+    width: 50px;
+    background: transparent;
+    border: none;
+    outline: none;
+}
+
+/*===== Preci =====*/
+.precio {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 83px;
+  background-color: #fff;
+  border-radius: 1.5rem 1.5rem 0 0;
+  -webkit-box-shadow: 0px 0px 20px rgba(17, 17, 17, 0.25);
+          box-shadow: 0px 0px 20px rgba(17, 17, 17, 0.25);
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.precio-titulo {
+  font-size:  1.8rem;
+  color: #333;
+}
+
+.precio-boton {
+  padding: 1.25rem 3.125rem ;
+  border-radius: .5rem;
+}
+.precio-mod{
+    margin-right: 30px;
+    border-radius: .5rem;
+    font-size: x-large;
+}
+.descuento{
+  width: 400px;
+}
+.number::-webkit-inner-spin-button, 
+.number::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}
+
+.number { -moz-appearance:textfield; }
+
+/*===== MEDIA QUERIS =====*/
+@media screen and (min-width: 968px) {
+  .home {
+    height: 100vh;
+    -ms-grid-columns: max-content max-content;
+        grid-template-columns: max-content max-content;
+    -ms-grid-rows: max-content;
+        grid-template-rows: max-content;
+    -ms-flex-line-pack: center;
+        align-content: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-column-gap: 6rem;
+            column-gap: 6rem;
+  }
+  .container-img {
+    width: 430px;
+    height: 430px;
+  }
+  .img-producto {
+    width: 450px;
+    top: 13%;
+    left: 15%;
+  }
+  .informacion-producto {
+    -ms-flex-item-align: center;
+        -ms-grid-row-align: center;
+        align-self: center;
+  }
+  .info {
+    margin-bottom: 1rem;
+  }
+  .info-titulo{
+    margin-bottom: 1rem;
+  }
+
+  .precio {
+    position: initial;
+    background-color: initial;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-shadow: none;
+            box-shadow: none;
+  }
+  .precio-titulo {
+    color: #333;
+    font-weight: 500;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .bd-grid {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .container-img{
+    margin-top: -122px;
+  }
+  img{
+    margin-top: -122px;
+  }
+
+}

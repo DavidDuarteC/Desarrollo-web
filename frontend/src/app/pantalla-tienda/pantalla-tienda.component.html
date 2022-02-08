@@ -1,0 +1,33 @@
+
+    <main class="main container">
+        <h1 id="titulo-tienda">Nuestra Tienda</h1>
+        <div class="row row-cols-2 align-items-start ver-productos">
+            <a class="col-4 align-self-start carta-producto " *ngFor="let producto of productos"  (click)="verProducto(producto)">
+                <div class="imagen-producto">
+                    <img id="plateado" class="plateado active" [src]="producto.imagen" alt="soporte">
+                </div>
+                <div class="producto-detalles">
+                    <span class="nombre-producto">{{producto.nombre}}</span>
+                    <p>Impuesto incluido. Los <a class="link-gastos-de-envio" href="">gastos de envío</a> se calculan en la pantalla de pagos.</p>
+                </div>
+                <div class="color-producto">
+                    <div class="precio">
+                        <span class="precio_oferta">{{(producto.precio * producto.descuento) | currency}}</span>
+                        <span class="precio_num">{{producto.precio | currency}}</span>
+                    </div>
+                </div>
+                <div *ngIf="loggedin == true && producto.cantidad > 0" class="boton">
+                    <div class="boton-pantalla "></div>
+                    <button type="button" class="btn">Agregar Al Carrito</button>
+                </div>
+                <div *ngIf="producto.cantidad == 0" class="boton">
+                    <div class="boton-pantalla"></div>
+                    <button type="button" class="btn sin-inventario">Sin Inventario</button>
+                </div>
+            </a>
+
+        </div>
+
+   </main>
+
+

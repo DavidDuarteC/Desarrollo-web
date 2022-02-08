@@ -1,0 +1,41 @@
+<div class="container">
+	<h1>Carrito de compras</h1>
+	<div class="carrito">
+		<div class="productos" >
+			<div class="producto" *ngFor="let producto of productos">
+				<img class="imagen-producto" src="{{producto.imagen}}">
+				<div class="producto-info">
+					<h4 class="producto-nombre">{{producto.nombre}}</h4>
+					<h5 class="producto-precio">{{(producto.precio! * producto.descuento!) | currency}}</h5>
+					<h6 class="producto-oferta"><del>{{producto.precio | currency}}</del></h6>
+					<p class="producto-cantidad">Cant. <input type="number" value="{{producto.cantidad}}" min="0" disabled id="cantP" (change)="onChange($event, producto)"/>
+					<p class="producto-eliminar">
+                        <button type="button" class="btn btn-outline-danger producto-eliminar" (click)="eliminarProducto(producto)"><i class="fas fa-trash-alt" aria-hidden="true"></i></button>
+					</p>
+				</div>
+			</div>
+			<br>
+		</div>
+		<div class="carrito-total">
+			<p>
+				<span>Subtotal</span>
+				<span id="subtotal">{{ total | currency}}</span>
+			</p>
+			<p>
+				<span>Número de productos</span>
+				<span id="numProductos">{{tam}}</span>
+			</p>
+			<p>
+				<span>IVA</span>
+				<span id="iva">{{ total * iva | currency}}</span>
+			</p>
+            <p>
+				<span>Total</span>
+				<span id="total">{{ (total * iva)+total | currency}}</span>
+			</p>
+            <div *ngIf="productos.length > 0" class="d-grid gap-2">
+                <button type="button" class="btn btn-outline-primary comprar" id="finalizarCompra" (click)="comprarCarrito()">Finalizar pedido</button>
+            </div>
+		</div>
+	</div>
+</div>
